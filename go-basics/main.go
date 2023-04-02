@@ -1,7 +1,7 @@
 package main
 
 import (
-	"go-learning/app"
+	"go-basics/app"
 )
 
 func main() {

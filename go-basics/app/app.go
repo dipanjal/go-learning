@@ -2,7 +2,7 @@ package app
 
 import (
 	"fmt"
-	"go-learning/utils"
+	"go-basics/utils"
 )
 
 func Run() {
