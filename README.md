@@ -2,4 +2,6 @@
 ```Aimed to practiece Golang Syntax and Design Patterns```
 
 # Reference
-https://gobyexample.com/
+[Go by Example](https://gobyexample.com/)
+
+[Go Standard Packages](https://pkg.go.dev/std)
