@@ -1,4 +1,4 @@
-# Go Learning Path
+# Go Basic Learning
 ```Aimed to practiece Golang Syntax and Design Patterns```
 
 # Reference
