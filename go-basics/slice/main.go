@@ -3,6 +3,11 @@ package main
 import "fmt"
 
 func main() {
+	//example1()
+	bookSliceTypeExample()
+}
+
+func example1() {
 	books := []string{"Java", "Python"}
 	fmt.Println(books)
 	fmt.Printf("Reference before append %p\n", &books)
@@ -25,5 +30,33 @@ func main() {
 	// we can just ignore it using low dash like this _
 	for _, item := range booksModified {
 		fmt.Println(item)
+	}
+}
+
+/**
+in this method we are going to create a custom type of string slice, Books
+which is a slice of string, and we can use it same as a slice of string
+*/
+func bookSliceTypeExample() {
+	type Books []string
+	books := Books{"Java", "Python", "Go", "Rust"}
+	fmt.Println(books)
+
+	for index, book := range books {
+		fmt.Println(index, "->", book)
+	}
+
+	// calling the generic function which can accept any type which is extended from as []string
+	printSlice(books, false)
+}
+
+// This function accepts any type which is extended from []string
+func printSlice(items []string, showIndex bool) {
+	for index, item := range items {
+		if showIndex {
+			fmt.Println(index, "->", item)
+		} else {
+			fmt.Println(item)
+		}
 	}
 }
