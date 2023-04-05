@@ -1,8 +1,6 @@
 package main
 
-import (
-	"go-basics/app"
-)
+import "go-basics/app"
 
 func main() {
 	app.Run()
