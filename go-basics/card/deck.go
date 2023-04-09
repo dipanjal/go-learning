@@ -48,11 +48,20 @@ func (deck Deck) saveToFile(fileName string) error {
 	return fileError
 }
 
-func createNewDeckFromFile(fileName string) Deck {
+func createNewDeckFromFile(fileName string) (error, Deck) {
 	filePath := filepath.Join(DirFixed, fileName)
 	bytes, err := os.ReadFile(filePath)
 	if err != nil {
-		log.Panicf("Unexpected error occurred while reading file: %s\n", err)
+		return err, nil
 	}
-	return strings.Split(string(bytes), Separator)
+	return nil, strings.Split(string(bytes), Separator)
+}
+
+func (deck Deck) shuffle() {
+	rnd := utils.NewRand()
+	for index := range deck {
+		newIndex := rnd.Intn(len(deck))
+		//fmt.Printf("swap deck[%d] with deck[%d]\n", index, newIndex)
+		deck[index], deck[newIndex] = deck[newIndex], deck[index]
+	}
 }
