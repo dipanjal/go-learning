@@ -75,7 +75,6 @@ func (deck Deck) shuffle() {
 	rnd := utils.NewRand()
 	for index := range deck {
 		newIndex := rnd.Intn(len(deck))
-		//fmt.Printf("swap deck[%d] with deck[%d]\n", index, newIndex)
 		deck[index], deck[newIndex] = deck[newIndex], deck[index]
 	}
 }
