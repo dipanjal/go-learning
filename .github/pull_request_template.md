@@ -1,15 +1,10 @@
 ## Description
-
-This is a PR template in going to be added for each PR request
+Add a short description
 
 ## Changes
-
-- Added github PR template
-- Fixed issues
-- bla bla
+- Add changes like this
 
 
 ## Tested
-
 - [ ] YES
 - [ ] NO
