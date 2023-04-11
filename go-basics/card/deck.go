@@ -12,8 +12,22 @@ import (
 // Deck is a decorated type of []string slice
 type Deck []string
 
+var cardSuits = []string{"Spades", "Hearts", "Diamonds", "Clubs"}
+var cardValues = []string{"Ace", "2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "King"}
+
 const DirFixed = "./decks"
 const Separator = ","
+
+// newDeck function creates a new Decl which is a new slice of cards
+func newDeck() Deck {
+	cards := Deck{}
+	for _, suit := range cardSuits {
+		for _, val := range cardValues {
+			cards = append(cards, val+" of "+suit)
+		}
+	}
+	return cards
+}
 
 // a receiver function which can be used by any type of Deck
 // the argument deck is like this in java or self in python
@@ -61,7 +75,6 @@ func (deck Deck) shuffle() {
 	rnd := utils.NewRand()
 	for index := range deck {
 		newIndex := rnd.Intn(len(deck))
-		//fmt.Printf("swap deck[%d] with deck[%d]\n", index, newIndex)
 		deck[index], deck[newIndex] = deck[newIndex], deck[index]
 	}
 }
